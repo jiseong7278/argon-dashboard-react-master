@@ -98,6 +98,8 @@ const DormitoryEdit = (props) => {
                     
                     <div className={"dormitory-edit-content-body"}>
                         {/*dormitoryEditList에 있는 facility name limit time 넣어주기*/}
+
+
                         <div className={"dormitory-innerFacility-list"}>
                             <ul className={"dormitory-innerFacility-list-ul"}>
                                 <li className={"dormitory-innerFacility-list-li"}>
