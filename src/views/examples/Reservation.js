@@ -43,6 +43,7 @@ const Reservation = (props) => {
 
     let innerFacility_img = 'argon-react.png';
     let img_name = innerFacility_img.substring(0, innerFacility_img.indexOf('.'));
+
     const findFacilityNum = props.match.params.facility_num
 
     const [innerFacilityList,setinnerFacilityList] = useState([]);

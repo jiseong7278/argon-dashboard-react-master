@@ -13,7 +13,7 @@ const db = mysql.createConnection(
     {
         user: 'root',
         host: 'localhost',
-        password: 'ql!@#$%qjs12',
+        password: '1234',
         database: 'ccd'
     }
 );
@@ -134,6 +134,21 @@ app.get('/inner_facility',async(req,res) => {
     db.query(
         "SELECT * FROM inner_facility AS inf INNER JOIN facility_seat AS fs ON inf.inner_facility_num = fs.inner_facility_num " +
         "INNER JOIN seat_availability AS sa ON fs.facility_seat_num = sa.facility_seat_num WHERE inf.facility_num = ?",[inner_facility_num],
+        (err,result) => {
+            if(err){
+                console.log(err)
+            }else{
+                res.send(result);
+            }
+        }
+    );
+});
+
+app.get('/dormitory_edit',async(req,res) => {
+    let dormitory_num = req.query.dormitoryNum;
+    db.query(
+        "SELECT * FROM ccd.facility WHERE dormitory_num = ? "
+       ,[dormitory_num],
         (err,result) => {
             if(err){
                 console.log(err)

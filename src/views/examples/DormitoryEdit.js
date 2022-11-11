@@ -62,14 +62,28 @@ const DormitoryEdit = (props) => {
     //img name variable
     let img_name = "clickit.png";
 
+    const findDormitoryNumName = props.match.params.dormitory_num
+    const findDormitoryValue = findDormitoryNumName.split('|')
+
+
+
+    const [dormitoryEditList,setdormitoryEditList] = useState([]);
+    Axios.get("http://localhost:3001/dormitory_edit",{params:{
+            dormitoryNum : findDormitoryValue[0],
+        }}).then((response) => {
+        setdormitoryEditList(response.data);
+    });
+
+
     return (
         <>
             <Header />
             <Container className={"dormitoryEdit-container"}>
                 <div className={"dormitory-name"}>
-                    <h1>{dormitory_name}</h1>
+                    <h1>{findDormitoryValue[1]}</h1>
                 </div>
                 {/* =============== start dormitory edit content =============== */}
+
                 <div className={"dormitory-edit-content"}>
                     <div className={"dormitory-edit-content-header"}>
                         <div className={"dormitory-img"}>
@@ -81,7 +95,9 @@ const DormitoryEdit = (props) => {
                         <input type={"submit"} className={"dormitory-edit-save"} value={"저장"}/>
                         <input type={"submit"} className={"dormitory-edit-save"} value={"시설물 추가"}/>
                     </div>
+                    
                     <div className={"dormitory-edit-content-body"}>
+                        {/*dormitoryEditList에 있는 facility name limit time 넣어주기*/}
                         <div className={"dormitory-innerFacility-list"}>
                             <ul className={"dormitory-innerFacility-list-ul"}>
                                 <li className={"dormitory-innerFacility-list-li"}>
