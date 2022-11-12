@@ -75,11 +75,12 @@ const DormitoryEdit = (props) => {
                         <div className={"dormitory-img"}>
                             <img src={require('../../assets/img/dormitory/' + img_name)}/>
                         </div>
-                        <input type={"submit"} className={"dormitory-img-edit"} value={"이미지 수정"}/>
+                        <Button className={"dormitory-img-edit"} type={"button"} color={"primary"} size={"sm"}>이미지 수정</Button>
+                        {/*<input type={"submit"} className={"dormitory-img-edit"} value={"이미지 수정"}/>*/}
                         <input type={"text"} className={"dormitory-name-input"} placeholder={dormitory_name}/>
-                        <input type={"submit"} className={"dormitory-edit-save"} value={"이름 변경"}/>
-                        <input type={"submit"} className={"dormitory-edit-save"} value={"저장"}/>
-                        <input type={"submit"} className={"dormitory-edit-save"} value={"시설물 추가"}/>
+                        <Button className={"dormitory-name-edit"} type={"button"} color={"primary"} size={"sm"}>이름 변경</Button>
+                        <Button className={"dormitory-edit-save"} type={"button"} color={"primary"}>저장</Button>
+                        <Button className={"dormitory-create-innerFacility"} type={"button"} color={"primary"}>시설물 추가</Button>
                     </div>
                     <div className={"dormitory-edit-content-body"}>
                         <div className={"dormitory-innerFacility-list"}>
