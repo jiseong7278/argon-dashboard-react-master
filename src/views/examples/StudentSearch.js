@@ -2,12 +2,13 @@
 import React, {useState} from 'react'
 import Axios from "axios";
 const StudentSearch = (props) => {
-    const [state, setState] = useState();
+    const [state, setState] = useState("blank");
     const handleChange = (e) => {
         setState({
             [e.target.name]: e.target.value,
         });
     };
+
     function submitGetStudents ()  {
 
         Axios.get("http://localhost:3001/searchStudents",{params : {

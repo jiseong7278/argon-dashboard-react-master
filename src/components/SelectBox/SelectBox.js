@@ -12,7 +12,7 @@ const SelectBox = (props) => {
     };
 
     return (
-        <form>
+
             <div className="input_area">
                 <select onChange={handleSelect} id="class">
                     <option value="0" >생활관 선택</option>
@@ -21,7 +21,7 @@ const SelectBox = (props) => {
                     ))}
                 </select>
             </div>
-        </form>
+
 
     );
 
